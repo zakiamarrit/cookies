@@ -9,11 +9,17 @@ use Illuminate\Support\Facades\Hash;
 
 class RotiController extends Controller
 {
-    public function index() {
+    public function index(Request $request)
+    {
         $datas = DB::select('select * from roti');
+        if (!empty($request->filter)) {
+            $datas =   DB::table('roti')->where('nama_roti', 'like', '%' . $request->filter . '%')
+                ->get();
+        }
 
         return view('roti.index')
-            ->with('datas', $datas);
+            ->with('datas', $datas)
+            ->with('filter', $request->filter);
     }
 
     public function create() {

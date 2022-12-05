@@ -9,11 +9,17 @@ use Illuminate\Support\Facades\Hash;
 
 class TokoController extends Controller
 {
-    public function index() {
+    public function index(Request $request)
+    {
         $datas = DB::select('select * from toko');
+        if (!empty($request->filter)) {
+            $datas =   DB::table('toko')->where('cabang_toko', 'like', '%' . $request->filter . '%')
+                ->get();
+        }
 
         return view('toko.index')
-            ->with('datas', $datas);
+            ->with('datas', $datas)
+            ->with('filter', $request->filter);
     }
 
     public function create() {

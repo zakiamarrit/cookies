@@ -9,6 +9,20 @@
 @endif
 
 <div class="container">
+    <form method="get" action="{{ route('roti.index') }}" class="form-inline my-2 my-lg-0">
+        @csrf
+        <div class="row mt-3">
+            <div class="col-sm-6">
+                <input class="form-control mr-sm-2" type="text" name="filter" placeholder="Cari Berdasarkan Nama Roti" aria-label="Search" value="{{$filter}}">
+            </div>
+            <div class="col-sm-6">
+                <button class="btn btn-outline-success" type="submit">Cari</button>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="container mt-2">
+    <a href="/" type="button" class="btn btn-outline-info text-black rounded-3">Home</a>
     <a href="{{ route('roti.create') }}" type="button" class="btn btn-outline-info text-black rounded-3">Tambah Roti</a>
 
     <div class="card mt-2">
