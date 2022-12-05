@@ -86,7 +86,7 @@ class RiwayatController extends Controller
 
     public function delete($id) {
         // Menggunakan Query Builder Laravel dan Named Bindings untuk valuesnya
-        DB::delete('DELETE FROM riwayat WHERE id_riwayat_produksi = :id_riwayat_produksi', ['id_riwayat_produksi' => $id]);
+        DB::delete('DELETE FROM riwayat_produksi WHERE id_riwayat_produksi = :id_riwayat_produksi', ['id_riwayat_produksi' => $id]);
 
         return redirect()->route('riwayat.index')->with('success', 'Data riwayat berhasil dihapus');
     }
