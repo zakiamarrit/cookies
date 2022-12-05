@@ -1,10 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
+        <div class="col-md-12">
+            <div class="card mb-4">
                 <div class="card-header">{{ __('Dashboard') }}</div>
 
                 <div class="card-body">
@@ -16,10 +17,6 @@
 
                     {{ __('You are logged in!') }}
                 </div>
-            </div>
-            <br>
-            <div class="card">
-                <div class="card-header">Dashboard Cookies Store</div>
                 <div class="card-body">
                     <table>
                         <tr>
@@ -39,9 +36,48 @@
                             </td>
                         </tr>
                     </table>
+
                 </div>
             </div>
+
+            <div class="card">
+                <div class="card-header">
+                    RIWAYAT PRODUKSI + TOKO
+                </div>
+                <div class="card-body">
+                    <table class="table table-hover mt-2">
+                        <thead>
+                        <tr>
+                            <th>ID Riwayat Produksi</th>
+                            <th>ID Roti</th>
+                            <th>Jumlah</th>
+                            <th>Tanggal Stok</th>
+                            <th>ID Toko</th>
+                            <th>Cabang Toko</th>
+                            <th>Alamat</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($datas as $data)
+                                <tr>
+                                    <td>{{ $data->id_riwayat_produksi}}</td>
+                                    <td>{{ $data->id_roti }}</td>
+                                    <td>{{ $data->jumlah }}</td>
+                                    <td>{{ $data->tgl_stok }}</td>
+                                    <td>{{ $data->id_toko}}</td>
+                                    <td>{{ $data->cabang_toko }}</td>
+                                    <td>{{ $data->alamat }}</td>
+                                </tr>
+                            @endforeach
+                    
+                        </tbody>
+                    </table>
+                
+                </div>
+            </div>
+
         </div>
     </div>
+
 </div>
 @endsection
