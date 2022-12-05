@@ -9,7 +9,9 @@
 @endif
 
 <div class="container">
-    <div class="card">
+    <a href="{{ route('toko.create') }}" type="button" class="btn btn-outline-info text-black rounded-3">TambahToko</a>
+
+    <div class="card mt-2">
         <div class="card-header">Toko</div>
         <div class="card-body">
             <table class="table table-hover mt-2">

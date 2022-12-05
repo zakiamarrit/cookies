@@ -35,6 +35,9 @@
       body {
         font-family: 'Nunito', sans-serif;
       }
+      a:hover {
+        text-decoration: none;
+    }
     </style>
   </head>
 

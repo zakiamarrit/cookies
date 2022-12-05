@@ -18,25 +18,11 @@
                     {{ __('You are logged in!') }}
                 </div>
                 <div class="card-body">
-                    <table>
-                        <tr>
-                            <td>
-                                <a href="{{ route('toko.index') }}">Toko</a>
-
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a href="{{ route('roti.index') }}">Roti</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a href="{{ route('pegawai.index') }}">Pegawai</a>
-                            </td>
-                        </tr>
-                    </table>
-
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                        <a class="btn btn-outline-primary" role="button" aria-disabled="true" href="{{ route('toko.index') }}">Toko</a>
+                        <a class="btn btn-outline-primary" role="button" aria-disabled="true" href="{{ route('roti.index') }}">Roti</a>
+                        <a class="btn btn-outline-primary" role="button" aria-disabled="true" href="{{ route('pegawai.index') }}">Pegawai</a>
+                      </div>
                 </div>
             </div>
 

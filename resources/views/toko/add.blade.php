@@ -14,38 +14,31 @@
 </div>
 @endif
 
-<div class="card mt-4">
-    <div class="card-body">
-
-        <h5 class="card-title fw-bolder mb-3">Tambah Toko</h5>
-
-        <form method="post" action="{{ route('toko.store') }}">
-            @csrf
-            <div class="mb-3">
-                <label for="id_toko" class="form-label">ID Toko</label>
-                <input type="text" class="form-control" id="id_toko" name="id_toko">
-            </div>
-            <div class="mb-3">
-                <label for="cabang_toko" class="form-label">Cabang Toko</label>
-                <input type="text" class="form-control" id="cabang_toko" name="cabang_toko">
-            </div>
-            <div class="mb-3">
-                <label for="alamat" class="form-label">Alamat</label>
-                <input type="text" class="form-control" id="alamat" name="alamat">
-            </div>
-            <div class="mb-3">
-                <label for="tipe_obat" class="form-label">Tipe Obat</label>
-                <input type="text" class="form-control" id="tipe_obat" name="tipe_obat">
-            </div>
-            <div class="mb-3">
-                <label for="tgl_kadaluarsa" class="form-label">Tanggal Kadaluarsa</label>
-                <input type="text" class="form-control" id="tgl_kadaluarsa" name="tgl_kadaluarsa">
-            </div>
-            <div class="text-center">
-                <input type="submit" class="btn btn-primary" value="Tambah" />
-            </div>
-        </form>
-    </div>
+<div class="container">
+    <div class="card mt-4">
+        <div class="card-body">
+    
+            <h5 class="card-title fw-bolder mb-3">Tambah Toko</h5>
+    
+            <form method="post" action="{{ route('toko.store') }}">
+                @csrf
+                <div class="mb-3">
+                    <label for="id_toko" class="form-label">ID Toko</label>
+                    <input type="text" class="form-control" id="id_toko" name="id_toko">
+                </div>
+                <div class="mb-3">
+                    <label for="cabang_toko" class="form-label">Cabang Toko</label>
+                    <input type="text" class="form-control" id="cabang_toko" name="cabang_toko">
+                </div>
+                <div class="mb-3">
+                    <label for="alamat" class="form-label">Alamat</label>
+                    <input type="text" class="form-control" id="alamat" name="alamat">
+                </div>
+                <div class="text-center">
+                    <input type="submit" class="btn btn-primary" value="Tambah" />
+                </div>
+            </form>
+        </div>
+    </div>    
 </div>
-
 @endsection
