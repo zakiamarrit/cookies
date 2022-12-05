@@ -39,10 +39,10 @@ Route::middleware(['auth'])->group(function () {
 Route::middleware(['auth'])->group(function () {
     Route::get('/roti', [RotiController::class, 'index'])->name('roti.index');
     Route::get('/roti/add', [RotiController::class, 'create'])->name('roti.create');
-    Route::post('/rotistore', [RotiController::class, 'store'])->name('roti.store');
-    Route::get('/rotiedit/{id}', [RotiController::class, 'edit'])->name('roti.edit');
-    Route::post('/rotiupdate/{id}', [RotiController::class, 'update'])->name('roti.update');
-    Route::post('/rotidelete/{id}', [RotiController::class, 'delete'])->name('roti.delete');
+    Route::post('/roti/store', [RotiController::class, 'store'])->name('roti.store');
+    Route::get('/roti/edit/{id}', [RotiController::class, 'edit'])->name('roti.edit');
+    Route::post('/roti/update/{id}', [RotiController::class, 'update'])->name('roti.update');
+    Route::post('/roti/delete/{id}', [RotiController::class, 'delete'])->name('roti.delete');
 });
 
 Route::middleware(['auth'])->group(function () {
