@@ -4,6 +4,7 @@
 use App\Http\Controllers\TokoController;
 use App\Http\Controllers\RotiController;
 use App\Http\Controllers\PegawaiController;
+use App\Http\Controllers\RiwayatController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -47,4 +48,13 @@ Route::middleware(['auth'])->group(function () {
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/pegawai', [PegawaiController::class, 'index'])->name('pegawai.index');
+});
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/riwayat', [RiwayatController::class, 'index'])->name('riwayat.index');
+    Route::get('/riwayat/add', [RiwayatController::class, 'create'])->name('riwayat.create');
+    Route::post('/riwayat/store', [RiwayatController::class, 'store'])->name('riwayat.store');
+    Route::get('/riwayat/edit/{id}', [RiwayatController::class, 'edit'])->name('riwayat.edit');
+    Route::post('/riwayat/update/{id}', [RiwayatController::class, 'update'])->name('riwayat.update');
+    Route::post('/riwayat/delete/{id}', [RiwayatController::class, 'delete'])->name('riwayat.delete');
 });

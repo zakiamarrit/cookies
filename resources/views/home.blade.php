@@ -22,6 +22,7 @@
                         <a class="btn btn-outline-primary" role="button" aria-disabled="true" href="{{ route('toko.index') }}">Toko</a>
                         <a class="btn btn-outline-primary" role="button" aria-disabled="true" href="{{ route('roti.index') }}">Roti</a>
                         <a class="btn btn-outline-primary" role="button" aria-disabled="true" href="{{ route('pegawai.index') }}">Pegawai</a>
+                        <a class="btn btn-outline-primary" role="button" aria-disabled="true" href="{{ route('riwayat.index') }}">Riwayat</a>
                       </div>
                 </div>
             </div>
