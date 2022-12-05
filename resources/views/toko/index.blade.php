@@ -9,7 +9,7 @@
 @endif
 
 <div class="container">
-    <a href="{{ route('toko.create') }}" type="button" class="btn btn-outline-info text-black rounded-3">TambahToko</a>
+    <a href="{{ route('toko.create') }}" type="button" class="btn btn-outline-info text-black rounded-3">Tambah Toko</a>
 
     <div class="card mt-2">
         <div class="card-header">Toko</div>
@@ -29,10 +29,10 @@
                             <td>{{ $data->cabang_toko }}</td>
                             <td>{{ $data->alamat }}</td>
                             <td>
-                                <a href="{{ route('toko.edit', $data->id_toko) }}" type="button" class="btn btn-warning rounded-3">Ubah</a>
+                                <a href="{{ route('toko.edit', $data->id_toko) }}" type="button" class="btn btn-info rounded-3">Ubah</a>
                 
                                 <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#hapusModal{{ $data->id_toko }}">
+                                <button type="button" class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#hapusModal{{ $data->id_toko }}">
                                     Hapus
                                 </button>
                 

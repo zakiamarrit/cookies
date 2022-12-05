@@ -9,7 +9,9 @@
 @endif
 
 <div class="container">
-    <div class="card">
+    <a href="{{ route('roti.create') }}" type="button" class="btn btn-outline-info text-black rounded-3">Tambah Roti</a>
+
+    <div class="card mt-2">
         <div class="card-header">Roti</div>
         <div class="card-body">
             <table class="table table-hover mt-2">
@@ -26,6 +28,37 @@
                             <td>{{ $data->id_roti }}</td>
                             <td>{{ $data->nama_roti }}</td>
                             <td>{{ $data->tgl_kadaluarsa }}</td>
+                            <td>
+                                <a href="{{ route('roti.edit', $data->id_roti) }}" type="button" class="btn btn-info rounded-3">Ubah</a>
+                
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#hapusModal{{ $data->id_roti }}">
+                                    Hapus
+                                </button>
+                
+                                <!-- Modal -->
+                                <div class="modal fade" id="hapusModal{{ $data->id_roti }}" tabindex="-1" aria-labelledby="hapusModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="hapusModalLabel">Konfirmasi</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <form method="POST" action="{{ route('roti.delete', $data->id_roti) }}">
+                                                @csrf
+                                                <div class="modal-body">
+                                                    Apakah anda yakin ingin menghapus data ini?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                                                    <button type="submit" class="btn btn-primary">Ya</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+
                         </tr>
                     @endforeach
                 </tbody>
